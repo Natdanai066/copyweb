@@ -1,0 +1,37 @@
+/* styles.module.css */
+.container {
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* จัดเรียงเนื้อหาในแนวดิ่ง */
+  }
+  
+  .header {
+    /* styles for header */
+  }
+  
+  .header_container {
+    /* styles for header container */
+  }
+  
+  .row {
+    /* styles for row */
+  }
+  
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบนของรูปภาพ */
+  }
+  
+  /* สลับลำดับของรูปภาพ */
+  .imageContainer img:nth-child(1) {
+    order: 2;
+  }
+  
+  .imageContainer img:nth-child(2) {
+    order: 1;
+  }
+  

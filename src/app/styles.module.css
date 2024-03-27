@@ -1,0 +1,29 @@
+/* styles.module.css */
+.container {
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    /* สไตล์สำหรับ header */
+  }
+  
+  .header_container {
+    width: 1140px; /* กำหนดความกว้างเป็น 1140px */
+    width: 100%; /* กำหนดให้เต็มกว้าง */
+  }
+  
+  .row {
+    /* สไตล์สำหรับ row */
+  }
+  
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  

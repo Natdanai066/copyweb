@@ -1,0 +1,15 @@
+.text-center {
+    text-align: center;
+  }
+  
+  .text-gray-600 {
+    color: #4b5563; /* สีเทาตัวใหญ่ */
+  }
+  
+  .text-lg {
+    font-size: 1.5rem; /* ขนาดตัวอักษรใหญ่กลาง */
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
