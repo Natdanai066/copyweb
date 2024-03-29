@@ -1,0 +1,22 @@
+.table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+  }
+  
+  .row {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logoCell {
+    padding: 8px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .logo {
+    width: 50px; /* ปรับขนาดของโลโก้ตามต้องการ */
+  }
+  
+  .infoCell {
+    padding: 8px;
+  }

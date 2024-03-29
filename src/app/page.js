@@ -25,34 +25,35 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './slide.css';
+import Table from './Table';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-const images = ["/home_cover_2.jpg", "/home_cover.jpg"];
+const images = ["/Screenshot.png", "/home_cover.jpg"];
 
 const BlankPage = () => {
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
 
   const handleKeywordChange = (event) => {
-      setKeyword(event.target.value);
+    setKeyword(event.target.value);
   };
 
   const handleLocationChange = (event) => {
-      setLocation(event.target.value);
+    setLocation(event.target.value);
   };
 
   const handleSubmit = (event) => {
-      event.preventDefault();
-      // ทำสิ่งที่คุณต้องการเมื่อผู้ใช้กดปุ่มค้นหา
-      // เช่น ส่งค่า keyword และ location ไปยัง API เพื่อดึงข้อมูล
+    event.preventDefault();
+    // ทำสิ่งที่คุณต้องการเมื่อผู้ใช้กดปุ่มค้นหา
+    // เช่น ส่งค่า keyword และ location ไปยัง API เพื่อดึงข้อมูล
   };
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prevIndex => (prevIndex + 1) % images.length);
-    }, 3000); // เปลี่ยนภาพทุก 3 วินาที
+    }, 30000); // เปลี่ยนภาพทุก 3 วินาที
 
     return () => clearInterval(interval);
   }, []);
@@ -105,12 +106,12 @@ const BlankPage = () => {
             <li><a href="#about">สำหรับบริษัท</a></li>
             <li><a href="#about">สำหรับผู้สมัครงาน</a></li>
           </ul>
-          </div>
-          
-  
-  <div className='slideshow'>
-      <img src={images[index]} alt="" width={1980} height={100} />
-      <style jsx>{`
+        </div>
+
+        
+        <div className='slideshow'>
+          <img src={images[index]} alt={`Image ${index}`} width={1980} height={100} />
+          <style jsx>{`
         .slideshow {
           position: relative;
           max-width: 100%;
@@ -125,149 +126,158 @@ const BlankPage = () => {
           transition: opacity 60s ease-in-out;
         }
       `}</style>
-    </div>
-
-        
-          
-            
-            <div className="home-form-search__wrapper container">
+      </div>
+        </div>
+        <Container maxWidth="lg">
+          <div className="home-form-search__wrapper container">
             <div className="home-form-search__container">
-                <form className="home-form-search row" onSubmit={handleSubmit}>
-                    <div className="col-12 col-md-5">
-                        <div className="input-group mb-2 mr-md-2">
-                            <input
-                                type="text"
-                                id="search_keyword"
-                                name="search[keyword]"
-                                placeholder="คำที่ต้องการค้นหา"
-                                className="form-control"
-                                value={keyword}
-                                onChange={handleKeywordChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <select
-                            id="search_geo"
-                            name="search[geo]"
-                            placeholder="สถานที่ฝึกงาน"
-                            className="form-control selectized"
-                            value={location}
-                            onChange={handleLocationChange}
-                        >
-                            {/* ตัวเลือกสำหรับสถานที่ฝึกงาน */}
-                        </select>
-                    </div>
-                    
-                    <div className="col-12 col-md-3 mt-2 mt-md-0">
-                        <button type="submit" className="btn btn-primary btn-block btn-lg">ค้นหา</button>
-                    </div>
-                </form>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <form className="home-form-search row" onSubmit={handleSubmit}>
+                <div className="col-12 col-md-5">
+                  <div className="input-group mb-2 mr-md-2">
+                    <input
+                      type="text"
+                      id="search_keyword"
+                      name="search[keyword]"
+                      placeholder="คำที่ต้องการค้นหา"
+                      className="form-control"
+                      value={keyword}
+                      onChange={handleKeywordChange}
+                    />
+                  </div>
+                </div>
+                <div className="col-12 col-md-4">
+                  <select
+                    id="search_geo"
+                    name="search[geo]"
+                    placeholder="สถานที่ฝึกงาน"
+                    className="form-control selectized"
+                    value={location}
+                    onChange={handleLocationChange}
+                  >
+                    {/* ตัวเลือกสำหรับสถานที่ฝึกงาน */}
+                  </select>
+                </div>
+
+                <div className="col-12 col-md-3 mt-2 mt-md-0">
+                  <button type="submit" className="btn btn-primary btn-block btn-lg">ค้นหา</button>
+                </div>
+              </form>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <h1 className="text-center text-gray-600 text-lg font-bold">เลือกงานกับบริษัทที่ดีที่สุด</h1>
                 </div>
-                <Container maxWidth="lg">
+                
                 <Grid container spacing={4}>
                 <Grid item xs={6} sm={4} md={3} lg={10}>
-                <div className="text-center">
-  
-</div>
+                  <div className="text-center">
 
-                <>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-        <Button size="small" className='flex-justify-center flex-items-center'>งานทั้งหมด</Button>
-          
-        </CardActions>
-      </Card>
-      
+                  </div>
 
-      
-  <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">งานทั้งหมด</Button>
-          
-        </CardActions>
-      </Card>
-      
+                  <>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                          sx={{ height: 140 }}
+                          image="/static/images/cards/contemplative-reptile.jpg"
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Button size="small" className='flex-justify-center flex-items-center'>งานทั้งหมด</Button>
 
-      <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">งานทั้งหมด</Button>
-          
-        </CardActions>
-      </Card>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">งานทั้งหมด</Button>
-          
-        </CardActions>
-      </Card>
-      </div>
-    </>
-    </Grid>
-    </Grid>
-    </Container>
-    
+                        </CardActions>
+                      </Card>
+
+
+
+                      <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                          sx={{ height: 140 }}
+                          image="/static/images/cards/contemplative-reptile.jpg"
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Button size="small">งานทั้งหมด</Button>
+
+                        </CardActions>
+                      </Card>
+
+
+                      <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                          sx={{ height: 140 }}
+                          image="/static/images/cards/contemplative-reptile.jpg"
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Button size="small">งานทั้งหมด</Button>
+
+                        </CardActions>
+                      </Card>
+                      <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                          sx={{ height: 140 }}
+                          image="/static/images/cards/contemplative-reptile.jpg"
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            Lizard
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Button size="small">งานทั้งหมด</Button>
+
+                        </CardActions>
+                      </Card>
+                    </div>
+                  </>
+                </Grid>
+                </Grid>
+                
+
+
             </div>
-        </div>
-            
+            </div>
+          
+          
+          <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <Table/>
+    </div>
+    </Container>
 
       </div>
-    </div>
+    
 
 
 
