@@ -1,105 +1,139 @@
-'use client'
-import { useState } from 'react';
-import styles from './keyword.css'; // นำเข้าไฟล์ CSS module
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  TextField,
+  InputAdornment,
+  Select,
+  MenuItem,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+} from '@material-ui/core';
+import { Search, LocationOn } from '@material-ui/icons';
 
-const Home = () => {
-    const [keyword, setKeyword] = useState('');
-    const [geo, setGeo] = useState('');
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  appBar: {
+    backgroundColor: '#2196f3',
+  },
+  title: {
+    flexGrow: 1,
+  },
+  search: {
+    width: '400px',
+    marginRight: '10px',
+  },
+  location: {
+    width: '200px',
+  },
+  select: {
+    width: '200px',
+  },
+  list: {
+    width: '600px',
+    margin: 'auto',
+  },
+}));
 
-    const handleKeywordChange = (event) => {
-        setKeyword(event.target.value);
+export default function Home() {
+  const classes = useStyles();
+  // const router = useRouter();
+  const [keyword, setKeyword] = useState('');
+  const [location, setLocation] = useState('');
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const response = await fetch(`/api/jobs?keyword=<span class="math-inline">\{keyword\}&location\=</span>{location}`);
+      const data = await response.json();
+      setJobs(data);
     };
+    fetchJobs();
+  }, [keyword, location]);
 
-    const handleGeoChange = (event) => {
-        setGeo(event.target.value);
-    };
+  const handleSearch = () => {
+    router.push(`/jobs?keyword=<span class="math-inline">\{keyword\}&location\=</span>{location}`);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // ทำสิ่งที่ต้องการเมื่อกด submit
-        // เช่น การนำค่า keyword และ geo ไปใช้งานในการค้นหา
-    };
+  const handleChangeKeyword = (event) => {
+    setKeyword(event.target.value);
+  };
 
-    return (
-        <div className={styles.container}>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.inputContainer}>
-                    <input
-                        type="text"
-                        id="search_keyword"
-                        placeholder="คำที่ต้องการค้นหา"
-                        className={styles.input}
-                        value={keyword}
-                        onChange={handleKeywordChange}
-                    />
-                </div>
-                <div className={styles.selectContainer}>
-                    <select
-                        id="search_geo"
-                        placeholder=""
-                        className={styles.select}
-                        value={geo}
-                        onChange={handleGeoChange}
-                    >
-                        <option value="" disabled>สถานที่ฝึกงาน</option>
-                        <option value="เขตคลองเตย">เขตคลองเตย</option>
-                        <option value="เขตคลองสาน">เขตคลองสาน</option>
-                        <option value="เขตคลองสามวา">เขตคลองสามวา</option>
-                        <option value="เขตคันนายาว">เขตคันนายาว</option>
-                        <option value="เขตจตุจักร">เขตจตุจักร</option>
-                        <option value="เขตจอมทอง">เขตจอมทอง</option>
-                        <option value="เขตดอนเมือง">เขตดอนเมือง</option>
-                        <option value="เขตดินแดง">เขตดินแดง</option>
-                        <option value="เขตดุสิต">เขตดุสิต</option>
-                        <option value="เขตตลิ่งชัน">เขตตลิ่งชัน</option>
-                        <option value="เขตทวีวัฒนา">เขตทวีวัฒนา</option>
-                        <option value="เขตทุ่งครุ">เขตทุ่งครุ</option>
-                        <option value="เขตธนบุรี">เขตธนบุรี</option>
-                        <option value="เขตบางเขน">เขตบางเขน</option>
-                        <option value="เขตบางแค">เขตบางแค</option>
-                        <option value="เขตบางกอกใหญ่">เขตบางกอกใหญ่</option>
-                        <option value="เขตบางกอกน้อย">เขตบางกอกน้อย</option>
-                        <option value="เขตบางกะปิ">เขตบางกะปิ</option>
-                        <option value="เขตบางขุนเทียน">เขตบางขุนเทียน</option>
-                        <option value="เขตบางคอแหลม">เขตบางคอแหลม</option>
-                        <option value="เขตบางซื่อ">เขตบางซื่อ</option>
-                        <option value="เขตบางนา">เขตบางนา</option>
-                        <option value="เขตบางบอน">เขตบางบอน</option>
-                        <option value="เขตบางพลัด">เขตบางพลัด</option>
-                        <option value="เขตบางรัก">เขตบางรัก</option>
-                        <option value="เขตบึงกุ่ม">เขตบึงกุ่ม</option>
-                        <option value="เขตปทุมวัน">เขตปทุมวัน</option>
-                        <option value="เขตประเวศ">เขตประเวศ</option>
-                        <option value="เขตป้อมปราบศัตรูพ่าย">เขตป้อมปราบศัตรูพ่าย</option>
-                        <option value="เขตพญาไท">เขตพญาไท</option>
-                        <option value="เขตพระโขนง">เขตพระโขนง</option>
-                        <option value="เขตพระนคร">เขตพระนคร</option>
-                        <option value="เขตภาษีเจริญ">เขตภาษีเจริญ</option>
-                        <option value="เขตมีนบุรี">เขตมีนบุรี</option>
-                        <option value="เขตยานนาวา">เขตยานนาวา</option>
-                        <option value="เขตราชเทวี">เขตราชเทวี</option>
-                        <option value="เขตราษฎร์บูรณะ">เขตราษฎร์บูรณะ</option>
-                        <option value="เขตลาดกระบัง">เขตลาดกระบัง</option>
-                        <option value="เขตลาดพร้าว">เขตลาดพร้าว</option>
-                        <option value="เขตวังทองหลาง">เขตวังทองหลาง</option>
-                        <option value="เขตวัฒนา">เขตวัฒนา</option>
-                        <option value="เขตสวนหลวง">เขตสวนหลวง</option>
-                        <option value="เขตสะพานสูง">เขตสะพานสูง</option>
-                        <option value="เขตสัมพันธวงศ์">เขตสัมพันธวงศ์</option>
-                        <option value="เขตสาทร">เขตสาทร</option>
-                        <option value="เขตสายไหม">เขตสายไหม</option>
-                        <option value="เขตหนองแขม">เขตหนองแขม</option>
-                        <option value="เขตหนองจอก">เขตหนองจอก</option>
-                        <option value="เขตหลักสี่">เขตหลักสี่</option>
-                        <option value="เขตห้วยขวาง">เขตห้วยขวาง</option>
-                    </select>
-                </div>
-                
-                    <button type="submit" className={styles.button}>ค้นหา</button>
-                
-            </form>
-        </div>
-    );
-};
+  const handleChangeLocation = (event) => {
+    setLocation(event.target.value);
+  };
 
-export default Home;
+  return (
+    <div className={classes.root}>
+      
+        
+      
+      <div style={{ padding: '20px' }}>
+        <TextField
+          className={classes.search}
+          label="คำที่ต้องการค้นหา"
+          variant="outlined"
+          value={keyword}
+          onChange={handleChangeKeyword}
+          InputAdornment={
+            <InputAdornment position="end">
+              <Search />
+            </InputAdornment>
+          }
+        />
+        
+        <TextField
+          className={classes.location}
+          label="สถานที่"
+          variant="outlined"
+          value={location}
+          onChange={handleChangeLocation}
+          InputAdornment={
+            <InputAdornment position="end">
+              <LocationOn />
+              
+            </InputAdornment>
+          }
+          
+        />
+        
+        <Select
+          className={classes.select}
+         
+          variant="outlined"
+          value={location}
+          onChange={handleChangeLocation}
+        >
+          <MenuItem value="">ทั้งหมด</MenuItem>
+          <MenuItem value="กรุงเทพมหานคร">กรุงเทพมหานคร</MenuItem>
+          <MenuItem value="เชียงใหม่">เชียงใหม่</MenuItem>
+          <MenuItem value="ภูเก็ต">ภูเก็ต</MenuItem>
+          <MenuItem value="โคราช">โคราช</MenuItem>
+          <MenuItem value="ขอนแก่น">ขอนแก่น</MenuItem>
+          
+        </Select>
+        <Button variant="contained" color="orange" onClick={handleSearch}>
+          ค้นหา
+        </Button>
+        <List className={classes.list}>
+          {jobs.map((job) => (
+            <React.Fragment key={job.id}>
+              <ListItem>
+                <ListItemText primary={job.title} secondary={job.company} />
+              </ListItem>
+              <Divider />
+            </React.Fragment>
+          ))}
+        </List>
+      </div>
+    </div>
+  );
+          }

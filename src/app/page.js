@@ -11,7 +11,7 @@ import Keyword from './keyword';
 import './text.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-
+import Footer from './footer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -770,11 +770,15 @@ const BlankPage = () => {
   </div>
 </div>
 
+</Container>
+<br/>
+<br/>
+<br/>
+<br/>
 
+<Footer/>
 
-
-
-        </Container>
+        
     
 </div>
 
