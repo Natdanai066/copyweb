@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Table = () => {
   return (
     <div>
-      
+
       <table style={{ width: '70%', border: '1px solid black', borderCollapse: 'collapse' }}>
         <thead>
           <tr><div style={{ margin: '0 20px' }}>

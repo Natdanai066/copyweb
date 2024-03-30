@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './styles.module.css';
 import otherStyles from './otherStyles.module.css';
 import TabContext from '@mui/lab/TabContext';
-
+import './front.css';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Divider, Stack } from '@mui/material';
 
 import './text.css';
@@ -23,6 +23,7 @@ import 'swiper/css/navigation';
 
 import './slide.css';
 import Table from './Table';
+import Bottom from './bottom';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import PropTypes from 'prop-types';
@@ -32,7 +33,7 @@ import Box from '@mui/material/Box';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
-const images = ["/Screenshot.png", "/home_cover.jpg"];
+const images = ["/Screenshot.png", "/home_cover.jpg","/logo-test3.png","logo-test4.jpg"];
 
 const BlankPage = () => {
   const [keyword, setKeyword] = useState('');
@@ -301,7 +302,7 @@ const BlankPage = () => {
     //   </Container>
 
     // </div>
-
+<div style={{ backgroundColor: 'white' }}>
     <main>
       <header>
         <Container maxWidth="lg">
@@ -315,7 +316,17 @@ const BlankPage = () => {
           </Grid>
         </Container>
       </header>
-
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <ul className={otherStyles.navbar}>
+          <li><a className={styles.active} href="#home">หาที่ฝึกงาน</a></li>
+          <li><a href="#news">หางานประจำ/พาร์ทไทม์</a></li>
+          <li><a href="#contact">วาไรตี้</a></li>
+          <li><a href="#about">ทักษะอาชีพ</a></li>
+          <li><a href="#about"> มหาวิทยาลัย</a></li>
+          <li><a href="#about">สำหรับบริษัท</a></li>
+          <li><a href="#about">สำหรับผู้สมัครงาน</a></li>
+        </ul>
+      </div>
       <div>
         <Swiper
           spaceBetween={30}
@@ -336,6 +347,12 @@ const BlankPage = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src={images[1]} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={images[2]} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={images[3]} />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -479,12 +496,14 @@ const BlankPage = () => {
           <Grid container spacing={2}>
             {/* Container Left */}
             <Grid item xs={9}>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
+              <br />
+              <br />
+              <br />
+              <br />
               <Table />
-
+              <br />
+              <br />
+              
               <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                   <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -520,7 +539,7 @@ const BlankPage = () => {
                       </Box>
 
                       <Divider />
-                      <br/>
+                      <br />
                       <Box sx={{ width: '100%' }} >
                         <Grid container spacing={2}>
                           <Grid item xs={2}>
@@ -656,12 +675,12 @@ const BlankPage = () => {
                       <Divider />
                     </Stack>
 
-                    <Button variant="outlined" sx={{ width: '100%', margin: '24px 0' }}>ดูเพิ่มเติม</Button>
+                    <Button variant="outlined" sx={{ width: '100%', margin: '24px 0' }}>  ดูเพิ่มเติม</Button>
                   </Box>
                 </TabPanel>
               </TabContext>
             </Grid>
-
+            
             {/* Container Right */}
             <Grid item xs={3}>
               <Container>
@@ -682,19 +701,40 @@ const BlankPage = () => {
           <img src="https://xn--12cas3c2av3m3a0g7c.com/bundles/_themes/toro/default/torocms/images/home_banner_1.jpg" width="100%" />
           <Container maxWidth="lg" >
             <div style={{ position: 'absolute', top: 50, bottom: 50, color: '#fff', fontSize: 22, fontWeight: 500, textAlign: 'center' }}>
-              สร้าง RESUME ONLINE <br/>
+              สร้าง RESUME ONLINE <br />
               FREE สมัครเลย
-              <br/>
+              <br />
               <Button variant="contained" color="success" sx={{ margin: '24px 0' }}>สร้าง RESUME</Button>
             </div>
           </Container>
+          
         </div>
 
 
       </Box>
+      </main>
 
-    </main>
+      <Container maxWidth="lg" >
+        <br/>
+        <div className='bold-and-large' style={{ display: 'flex', gap: '330px' }}>
+  <div >INSIGHTS(in)SPACE</div>
+  <div >INTERN(n)VIEW</div>
+</div>
 
+      <br/>
+      <div>
+      <Bottom/>
+      
+      </div>
+      
+  <div>กิจกรรม</div>
+  <div>ไม่พบข้อมูล</div>
+
+  ข่าว/ประชาสัมพันธ์
+  
+        </Container>
+    
+</div>
 
 
   );
