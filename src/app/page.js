@@ -7,7 +7,7 @@ import otherStyles from './otherStyles.module.css';
 import TabContext from '@mui/lab/TabContext';
 import './front.css';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Divider, Stack } from '@mui/material';
-
+import Keyword from './keyword';
 import './text.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -24,7 +24,8 @@ import 'swiper/css/navigation';
 import './slide.css';
 import Table from './Table';
 import Bottom from './bottom';
-
+import Newsslide from './newsslide';
+import Newsslide1 from './newsslide1';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -325,8 +326,11 @@ const BlankPage = () => {
           <li><a href="#about"> มหาวิทยาลัย</a></li>
           <li><a href="#about">สำหรับบริษัท</a></li>
           <li><a href="#about">สำหรับผู้สมัครงาน</a></li>
+          <li><img src ="/flag-th-icon.png"/></li>
+          <li><img src ="/flag-en-icon.png"/></li>
         </ul>
       </div>
+      
       <div>
         <Swiper
           spaceBetween={30}
@@ -356,7 +360,7 @@ const BlankPage = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-
+<Keyword/>
       <section>
         <Container maxWidth="lg">
           <Typography variant="h5" style={{ textAlign: 'center', color: 'gray' }} my={4}>เลือกงานกับบริษัทที่ดีที่สุด</Typography>
@@ -729,9 +733,47 @@ const BlankPage = () => {
       
   <div>กิจกรรม</div>
   <div>ไม่พบข้อมูล</div>
-
-  ข่าว/ประชาสัมพันธ์
+  <br/>
+  <div className='bold-and-large' style={{ display: 'flex', gap: '330px' }}>
+  <div >ข่าว/ประชาสัมพันธ์</div>
+  </div>
   
+  <Newsslide/>
+  <div className='bold-and-large' style={{ display: 'flex', gap: '330px' }}>
+  <div >อัปเดตวาไรตี้</div>
+  </div>
+  <Newsslide1/>
+  <br/>
+  <div className='bold-and-large' style={{ display: 'flex', gap: '330px', justifyContent: 'center' }}>
+  <div style={{ fontWeight: 'bold', fontSize: 'large' }}>Contact Sales</div>
+</div>
+<br/>
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', alignItems: 'center', columnGap: '10px' }}>
+    <img src="/a2.jpg" alt="Avatar" style={{ width: '70px', borderRadius: '50%' }} />
+    <div>
+      <span>ภูษณิศา ทาระธรรม (น้ำฟ้า)</span>
+      <h1>089-123-5016</h1>
+      <h2>internships_sale</h2>
+      <span>info@thaiinternships.com</span>
+    </div>
+  </div>
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', alignItems: 'center', columnGap: '10px' }}>
+    <img src="/a1.jpg" alt="Avatar" style={{ width: '70px', borderRadius: '50%' }} />
+    <div>
+      <span>ภัทรพร เอี่ยวมงคลศิลป์ (เฟิร์น)</span>
+      <h1>086-874-7153</h1>
+      <h2>fern.internships</h2>
+      <span>sale.internships@gmail.com</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
         </Container>
     
 </div>

@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+
 export default function ImgMediaCard() {
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
@@ -15,7 +16,7 @@ export default function ImgMediaCard() {
           image="/use1.jpg"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h8" component="div" fontWeight="fontWeightBold">
             INSIGHTS(in)SPACE @แสนสิริ
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -25,9 +26,11 @@ export default function ImgMediaCard() {
           <Typography variant="body2" color="text.secondary">
             INSIGHTS(in)SPACE 3/8/17 2,756
           </Typography>
+          _________________________________________________________________________________________________________________________________________________________________________________________________________________________
           <div class="text-center hr-primary">
                 <a href="/blogs/insights-in-space" class="btn btn-link btn-block text-muted">ดูทั้งหมด</a>
             </div>
+            _________________________________________________________________________________________________________________________________________________________________________________________________________________________
         </CardContent>
       </Card>
 
@@ -40,7 +43,7 @@ export default function ImgMediaCard() {
         />
         
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h8" component="div" fontWeight="fontWeightBold">
           INTER(n)VIEW ฝึกงานที่ AIS The StartUp
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -50,9 +53,12 @@ export default function ImgMediaCard() {
           <Typography variant="body2" color="text.secondary">
             INTER(n)VIEW 12/12/18 3,313
           </Typography>
+          _________________________________________________________________________________________________________________________________________________________________________________________________________________________
           <div class="text-center hr-primary">
                 <a href="/blogs/insights-in-space" class="btn btn-link btn-block text-muted">ดูทั้งหมด</a>
+                
             </div>
+            _________________________________________________________________________________________________________________________________________________________________________________________________________________________
         </CardContent>
       </Card>
     </div>
