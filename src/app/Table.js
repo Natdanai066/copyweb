@@ -1,83 +1,96 @@
 import React from 'react';
 import Image from 'next/image';
+import './button1.css';
+import './grid.css';
+
 
 const Table = () => {
   return (
     <div>
 
-      <table style={{ width: '70%', border: '1px solid black', borderCollapse: 'collapse' }}>
-        <thead>
-          <tr><div style={{ margin: '0 20px' }}>
-          <h1>งานแนะนำ</h1>
-            </div>
-          </tr>
-        </thead>
-        <tbody>
-            <br/>
-          <tr>
-          <div style={{ margin: '0 20px' }}>
-          <Image
-            src="/logo.png"
-            alt=""
-            width={100}
-            height={66.3}
-          /></div>
-            <td>รับสมัครตำแหน่ง Graphic Design<br/>
-            บริษัท พรีเมียร์ ซูชิ จำกัด<br/>
-            ฝึกงาน สำโรงเหนือ, เมืองสมุทรปราการ, สมุทรปราการ, 10270<br/>
-            ฝึกงานเบี้ยเลี้ยง  ฝึกงาน ภาษาอังกฤษ
-            </td>
-            
-            <td>สมัครงานนี้</td>
-            
-          </tr>
-          
-          <tr>
-          <div style={{ margin: '0 20px' }}>
-          <Image
-            src="/logo.png"
-            alt=""
-            width={100}
-            height={66.3}
-          /></div>
-            <td>พนักงานพาร์ทไทม์ /ทำเอกสารส่งออก (ช่วงมีนาคม - มิถุนายน) /ถ้าสื่อสารจีนได้มีค่าภาษาให้</td>
-            <td>สมัครงานนี้</td>
-          </tr>
-          <tr><div style={{ margin: '0 20px' }}>
-          <Image
-            src="/logo.png"
-            alt=""
-            width={100}
-            height={66.3}
-          /></div>
-            <td>รับนักศึกษาฝึกงาน ตำแหน่ง ต้อนรับบริการลูกค้า</td>
-            <td>สมัครงานนี้</td>
-          </tr>
-          <tr><div style={{ margin: '0 20px' }}>
-          <Image
-            src="/logo.png"
-            alt=""
-            width={100}
-            height={66.3}
-          /></div>
-            <td>รับนักศึกษาฝึกงาน ตำแหน่ง จัดเลี้ยง</td>
-            <td>สมัครงานนี้</td>
-          </tr>
-          <tr><div style={{ margin: '0 20px' }}>
-          <Image
-            src="/logo.png"
-            alt=""
-            width={100}
-            height={66.3}
-          /></div>
-            <td>พนักงานพาร์ทไทม์ /ทำเอกสารส่งออก (ช่วงมีนาคม - มิถุนายน) /ถ้าสื่อสารจีนได้มีค่าภาษาให้</td>
-            <td>สมัครงานนี้</td>
-            
-          </tr>
-          
-        </tbody>
+      {/* 1 */}
+      <div class="grid-container">
+      
+        <div class="item1"><img src='/home_job_featured.jpg' /></div>
+        <div class="item2"><Image
+          src="/lol1.png"
+          alt=""
+          width={100}
+          height={66.3}
+        /></div>
         
-      </table>
+          <td>รับนักศึกษาฝึกงาน ตำแหน่ง สโตร์<br />
+              <img src='/lol2.png' />บริษัท บูลยเกียรติ จำกัด<br />
+              <img src='/lol3.png' /> ฝึกงาน ขนงพระ, ปากช่อง, นครราชสีมา, 30130<br />
+              <img src='/lol4.png' /> ฝึกงาน
+            </td>
+        <div class="item4"><button style={{
+              backgroundColor: 'white',
+              color: 'orange',
+              border: '2px solid orange',
+              borderRadius: '5px',
+              padding: '10px 20px',
+              cursor: 'pointer'
+            }}>
+              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+              
+            </button></div>
+            
+      </div>
+
+      {/* 2 */}
+      <div class="grid-container">
+        <div class="item1"></div>
+        <div class="item2"><Image
+          src="/lol1.png"
+          alt=""
+          width={100}
+          height={66.3}
+        /></div>
+        
+        <td>รับนักศึกษาฝึกงาน ตำแหน่ง สโตร์<br />
+              <img src='/lol2.png' />บริษัท บูลยเกียรติ จำกัด<br />
+              <img src='/lol3.png' /> ฝึกงาน ขนงพระ, ปากช่อง, นครราชสีมา, 30130<br />
+              <img src='/lol4.png' /> ฝึกงาน
+            </td>
+        <div class="item4"><button style={{
+              backgroundColor: 'white',
+              color: 'orange',
+              border: '2px solid orange',
+              borderRadius: '5px',
+              padding: '10px 20px',
+              cursor: 'pointer'
+            }}>
+              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+            </button></div>
+      </div>
+
+      {/* 3 */}
+      <div class="grid-container">
+        <div class="item1"></div>
+        <div class="item2"><Image
+          src="/lol1.png"
+          alt=""
+          width={100}
+          height={66.3}
+        /></div>
+        
+        <td>รับนักศึกษาฝึกงาน ตำแหน่ง สโตร์<br />
+              <img src='/lol2.png' />บริษัท บูลยเกียรติ จำกัด<br />
+              <img src='/lol3.png' /> ฝึกงาน ขนงพระ, ปากช่อง, นครราชสีมา, 30130<br />
+              <img src='/lol4.png' /> ฝึกงาน
+            </td>
+        <div class="item4"><button style={{
+              backgroundColor: 'white',
+              color: 'orange',
+              border: '2px solid orange',
+              borderRadius: '5px',
+              padding: '10px 20px',
+              cursor: 'pointer'
+            }}>
+              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+            </button></div>
+      </div>
       
     </div>
   );

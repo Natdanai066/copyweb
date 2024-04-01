@@ -1,0 +1,7 @@
+button:hover {
+    background-color: orange;
+  }
+  
+  button:hover span {
+    color: white;
+  }

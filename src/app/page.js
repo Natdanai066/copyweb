@@ -20,7 +20,7 @@ import './button.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
+import Test from './test';
 import './slide.css';
 import Table from './Table';
 import Bottom from './bottom';
@@ -33,10 +33,14 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+// import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const images = ["/Screenshot.png", "/home_cover.jpg", "/logo-test3.png", "logo-test4.jpg"];
 
 const BlankPage = () => {
+  // const router = useRouter()
+
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
 
@@ -80,240 +84,67 @@ const BlankPage = () => {
     "https://เด็กฝึกงาน.com/media/cache/cmf_strip/cms/media/banners/3/sys-2d2635295272387cbd45f04e8025d019.png",
   ];
 
+  const companyData = [
+    {
+      "id": "1",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "2",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "3",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "4",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "5",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "6",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "7",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+    {
+      "id": "8",
+      "coverImg": "https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "logoImg": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "companyName": "Internships Recruitment (Thailand) Company Limited",
+      "address": "อนุสาวรีย์, บางเขน, กรุงเทพมหานคร, 10220",
+    },
+
+  ];
+
   return (
-
-    // <div style={{ background: 'white', minHeight: '100vh' }} className={styles.container}>
-
-    //   {/* ตัวอย่างเนื้อหาในหน้าเว็บ */}
-    //   <header className='header'></header>
-    //   <div className="header_container" ></div>
-    //   <div className="row pb-2"></div>
-    //   <div className="header"></div>
-
-    //   <div style={{ display: 'flex', justifyContent: 'center' }}>
-    //     <Image
-    //       src="/img-fluid.png"
-    //       alt=""
-    //       width={255}
-    //       height={66.3}
-    //     />
-    //     <div style={{ margin: '0 20px' }}></div>
-    //     <Image
-    //       src="/logo-test1.jpg"
-    //       alt=""
-    //       width={825}
-    //       height={99}
-    //       style={{ order: 2 }}
-    //     />
-
-    //     {/* <Image
-    //         src="/logo-test2.jpg"
-    //         alt=""
-    //         width={825}
-    //         height={99}
-    //         style={{order: 1}}
-    //       /> */}
-
-    //   </div>
-    //   <div style={{ display: 'flex', justifyContent: 'center' }}>
-    //     <ul className={otherStyles.navbar}>
-    //       <li><a className={styles.active} href="#home">หาที่ฝึกงาน</a></li>
-    //       <li><a href="#news">หางานประจำ/พาร์ทไทม์</a></li>
-    //       <li><a href="#contact">วาไรตี้</a></li>
-    //       <li><a href="#about">ทักษะอาชีพ</a></li>
-    //       <li><a href="#about"> มหาวิทยาลัย</a></li>
-    //       <li><a href="#about">สำหรับบริษัท</a></li>
-    //       <li><a href="#about">สำหรับผู้สมัครงาน</a></li>
-    //     </ul>
-    //   </div>
-
-
-    //   <div className='slideshow'>
-    //     <img src={images[index]} alt={`Image ${index}`} width={1980} height={100} />
-    //     <style jsx>{`
-    //     .slideshow {
-    //       position: relative;
-    //       max-width: 100%;
-    //       overflow: hidden;
-    //     }
-
-    //     .slideshow img {
-    //       display: block;
-    //       width: 100%;
-    //       height: auto;
-    //       object-fit: cover;
-    //       transition: opacity 60s ease-in-out;
-    //     }
-    //   `}</style>
-    //   </div>
-
-    //   <Container maxWidth="lg">
-    //     <div className="home-form-search__wrapper container">
-    //       <div className="home-form-search__container">
-    //         <form className="home-form-search row" onSubmit={handleSubmit}>
-    //           <div className="col-12 col-md-5">
-    //             <div className="input-group mb-2 mr-md-2">
-    //               <input
-    //                 type="text"
-    //                 id="search_keyword"
-    //                 name="search[keyword]"
-    //                 placeholder="คำที่ต้องการค้นหา"
-    //                 className="form-control"
-    //                 value={keyword}
-    //                 onChange={handleKeywordChange}
-    //               />
-    //             </div>
-    //           </div>
-    //           <div className="col-12 col-md-4">
-    //             <select
-    //               id="search_geo"
-    //               name="search[geo]"
-    //               placeholder="สถานที่ฝึกงาน"
-    //               className="form-control selectized"
-    //               value={location}
-    //               onChange={handleLocationChange}
-    //             >
-    //               {/* ตัวเลือกสำหรับสถานที่ฝึกงาน */}
-    //             </select>
-    //           </div>
-    //           <div className="col-12 col-md-3 mt-2 mt-md-0">
-    //             <button type="submit" className="btn btn-primary btn-block btn-lg">ค้นหา</button>
-    //           </div>
-    //         </form>
-    //         <div style={{ display: 'flex', justifyContent: 'center' }}>
-    //           <h1 className="text-center text-gray-600 text-lg font-bold">เลือกงานกับบริษัทที่ดีที่สุด</h1>
-    //         </div>
-
-    //         <Grid container spacing={4}>
-    //           <Grid item xs={6} sm={4} md={3} lg={10}>
-    //             <div className="text-center">
-
-    //             </div>
-
-    //             <>
-    //               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-    //                 <Card sx={{ maxWidth: 345 }}>
-    //                   <CardMedia
-    //                     sx={{ height: 140 }}
-    //                     image="/static/images/cards/contemplative-reptile.jpg"
-    //                     title="green iguana"
-    //                   />
-    //                   <CardContent>
-    //                     <Typography gutterBottom variant="h5" component="div">
-    //                       Lizard
-    //                     </Typography>
-    //                     <Typography variant="body2" color="text.secondary">
-    //                       Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-    //                     </Typography>
-    //                   </CardContent>
-    //                   <CardActions>
-    //                     <Button size="small" className='flex-justify-center flex-items-center'>งานทั้งหมด</Button>
-
-    //                   </CardActions>
-    //                 </Card>
-
-
-
-    //                 <Card sx={{ maxWidth: 345 }}>
-    //                   <CardMedia
-    //                     sx={{ height: 140 }}
-    //                     image="/static/images/cards/contemplative-reptile.jpg"
-    //                     title="green iguana"
-    //                   />
-    //                   <CardContent>
-    //                     <Typography gutterBottom variant="h5" component="div">
-    //                       Lizard
-    //                     </Typography>
-    //                     <Typography variant="body2" color="text.secondary">
-    //                       Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-    //                     </Typography>
-    //                   </CardContent>
-    //                   <CardActions>
-    //                     <Button size="small">งานทั้งหมด</Button>
-
-    //                   </CardActions>
-    //                 </Card>
-
-
-    //                 <Card sx={{ maxWidth: 345 }}>
-    //                   <CardMedia
-    //                     sx={{ height: 140 }}
-    //                     image="/static/images/cards/contemplative-reptile.jpg"
-    //                     title="green iguana"
-    //                   />
-    //                   <CardContent>
-    //                     <Typography gutterBottom variant="h5" component="div">
-    //                       Lizard
-    //                     </Typography>
-    //                     <Typography variant="body2" color="text.secondary">
-    //                       Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-    //                     </Typography>
-    //                   </CardContent>
-    //                   <CardActions>
-    //                     <Button size="small">งานทั้งหมด</Button>
-
-    //                   </CardActions>
-    //                 </Card>
-    //                 <Card sx={{ maxWidth: 345 }}>
-    //                   <CardMedia
-    //                     sx={{ height: 140 }}
-    //                     image="/static/images/cards/contemplative-reptile.jpg"
-    //                     title="green iguana"
-    //                   />
-    //                   <CardContent>
-    //                     <Typography gutterBottom variant="h5" component="div">
-    //                       Lizard
-    //                     </Typography>
-    //                     <Typography variant="body2" color="text.secondary">
-    //                       Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-    //                     </Typography>
-    //                   </CardContent>
-    //                   <CardActions>
-    //                     <Button size="small">งานทั้งหมด</Button>
-
-    //                   </CardActions>
-    //                 </Card>
-    //               </div>
-    //             </>
-    //           </Grid>
-    //         </Grid>
-
-
-
-    //       </div>
-    //     </div>
-
-
-    //     <div>
-    //       <br />
-    //       <br />
-    //       <br />
-    //       <br />
-    //       <br />
-    //       <Table />
-    //     </div>
-    //     <br/>
-    //     <br/>
-    //     <br/>
-    //     <Box sx={{ width: '100%', typography: 'body1' }}>
-    //       <TabContext value={value}>
-    //         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-    //           <TabList onChange={handleChange} aria-label="lab API tabs example">
-    //             <Tab label="Item One" value="1" />
-    //             <Tab label="Item Two" value="2" />
-    //             <Tab label="Item Three" value="3" />
-    //           </TabList>
-    //         </Box>
-    //         <TabPanel value="1">Item One</TabPanel>
-    //         <TabPanel value="2">Item Two</TabPanel>
-    //         <TabPanel value="3">Item Three</TabPanel>
-    //       </TabContext>
-    //     </Box>
-
-
-    //   </Container>
-
-    // </div>
     <div style={{ backgroundColor: 'white' }}>
       <main>
         <header>
@@ -373,9 +204,9 @@ const BlankPage = () => {
         </div>
 
         <Keyword />
+
         <section>
           <Container maxWidth="md">
-
             <Swiper
               spaceBetween={40}
               a11y={false}
@@ -405,206 +236,60 @@ const BlankPage = () => {
                 )
               })}
             </Swiper>
+          </Container>
+        </section>
 
+        <section style={{ marginBottom: 100 }}>
+          <Container maxWidth="lg">
             <Typography variant="h5" style={{ textAlign: 'center', color: 'gray' }} my={4}>เลือกงานกับบริษัทที่ดีที่สุด</Typography>
 
             <Swiper
               slidesPerView={4}
               spaceBetween={30}
+              slidesPerGroup={4}
+              loop={true}
               pagination={{
                 clickable: true,
               }}
-              modules={[Pagination]}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay, Pagination]}
               className="mySwiper"
             >
-              
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    <img src="/ysis.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                      <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/4893/sys-07e89a6956be5e827275cc1bb8287a2c.jpg"></img>
-                    </Typography>
-                    <Typography variant="body2">
-                    บริษัท วาย เอส ไอ เอส จำกัด
-                      <br />
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    ทุ่งมหาเมฆ, สาทร, กรุงเทพมหานคร, 10120
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                  <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card sx={{ width: '100%' }}>
-                  <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      
-                      <img src="/dentsu.png"/>
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    <img src="https://xn--12cas3c2av3m3a0g7c.com/media/cache/cmf_outbound_80x80/cms/media/company/5167/sys-c04485fe55dc4ea37aed3448f1d8a132.jpg"/>
-                    </Typography>
-                    <Typography variant="body2">
-                    dentsu International (Thailand)
-                      <br />
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      สีลม, บางรัก, กรุงเทพมหานคร, 10500
-                    </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <button class="button button1">งานทั้งหมด</button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
+              {companyData.map((company) => {
+                return (
+                  <SwiperSlide key={company.id}>
+                    <Card sx={{ maxWidth: '100%', border: '1px solid #ddd' }}>
+                      <div>
+                        <div style={{ position: 'relative', height: '150px' }}>
+                          <Image src={company.coverImg} width={0} height={0} style={{ width: '100%', height: '100%' }} />
+                        </div>
+                        <Image src={company.logoImg} width={0} height={0} style={{ width: '80px', height: '80px', position: 'absolute', top: '110px', left: '50%', right: '50%', translate: '-50%', border: '1px solid #ddd' }} />
+                      </div>
+                      <CardContent sx={{ marginTop: 5 }}>
+                        <Typography gutterBottom variant="p" component="div" style={{ marginBottom: 16, fontSize: 18, fontWeight: 'bold', color: '#f60' }}>
+                          {company.companyName}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {company.address}
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                      <Button href={'/newPage/'} style={{ margin: '0 auto' }}>
+                        <Link href={'/newPage/'} style={{ margin: '0 auto' }}>
+                          <Button variant="contained">งานทั้งหมด</Button>
+                        </Link></Button>
 
+                        {/* <Button variant="contained" onClick={()=> router.push('/company/' + company.id)}>งานทั้งหมด</Button> */}
+                      </CardActions>
+                    </Card>
+                  </SwiperSlide>
+                )
+              })}
             </Swiper>
           </Container>
-
         </section>
 
         <section>
@@ -612,14 +297,7 @@ const BlankPage = () => {
             <Grid container spacing={2}>
               {/* Container Left */}
               <Grid item xs={9}>
-                <br />
-                <br />
-                <br />
-                <br />
                 <Table />
-                <br />
-                <br />
-
                 <TabContext value={value}>
                   <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example">

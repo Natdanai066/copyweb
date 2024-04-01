@@ -85,7 +85,7 @@ export default function Home() {
               onChange={handleChangeKeyword}
               style={{ backgroundColor: "white" }}
 
-              InputAdornment={
+              inputAdornment={
                 <InputAdornment position="end">
                   <Search />
                 </InputAdornment>
@@ -111,6 +111,7 @@ export default function Home() {
             <Button variant="contained" color="orange" onClick={handleSearch}>
               ค้นหา
             </Button>
+            
             {/* <List className={classes.list}>
               {jobs.map((job) => (
                 <React.Fragment key={job.id}>
