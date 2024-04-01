@@ -16,6 +16,7 @@ import {
   Divider,
 } from '@material-ui/core';
 import { Search, LocationOn } from '@material-ui/icons';
+import { Container, Box } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,67 +74,56 @@ export default function Home() {
 
   return (
     <div className={classes.root}>
-      
-        
-      
-      <div style={{ padding: '20px' }}>
-        <TextField
-          className={classes.search}
-          label="คำที่ต้องการค้นหา"
-          variant="outlined"
-          value={keyword}
-          onChange={handleChangeKeyword}
-          InputAdornment={
-            <InputAdornment position="end">
-              <Search />
-            </InputAdornment>
-          }
-        />
-        
-        <TextField
-          className={classes.location}
-          label="สถานที่"
-          variant="outlined"
-          value={location}
-          onChange={handleChangeLocation}
-          InputAdornment={
-            <InputAdornment position="end">
-              <LocationOn />
-              
-            </InputAdornment>
-          }
-          
-        />
-        
-        <Select
-          className={classes.select}
-         
-          variant="outlined"
-          value={location}
-          onChange={handleChangeLocation}
-        >
-          <MenuItem value="">ทั้งหมด</MenuItem>
-          <MenuItem value="กรุงเทพมหานคร">กรุงเทพมหานคร</MenuItem>
-          <MenuItem value="เชียงใหม่">เชียงใหม่</MenuItem>
-          <MenuItem value="ภูเก็ต">ภูเก็ต</MenuItem>
-          <MenuItem value="โคราช">โคราช</MenuItem>
-          <MenuItem value="ขอนแก่น">ขอนแก่น</MenuItem>
-          
-        </Select>
-        <Button variant="contained" color="orange" onClick={handleSearch}>
-          ค้นหา
-        </Button>
-        <List className={classes.list}>
-          {jobs.map((job) => (
-            <React.Fragment key={job.id}>
-              <ListItem>
-                <ListItemText primary={job.title} secondary={job.company} />
-              </ListItem>
-              <Divider />
-            </React.Fragment>
-          ))}
-        </List>
-      </div>
+      <Container maxWidth="lg" >
+        <Box sx={{ backgroundColor: '#14264BF0', padding: 3, margin: '0 auto', position: 'relative', top: '-50px', zIndex: '10' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+            <TextField
+              className={classes.search}
+              label="คำที่ต้องการค้นหา"
+              variant="filled"
+              value={keyword}
+              onChange={handleChangeKeyword}
+              style={{ backgroundColor: "white" }}
+
+              InputAdornment={
+                <InputAdornment position="end">
+                  <Search />
+                </InputAdornment>
+              }
+            />
+
+            <Select
+              className={classes.select}
+              variant="filled"
+              placeholder="สถานที่ฝึกงาน"
+              value={location}
+              style={{ backgroundColor: "white" }}
+              onChange={handleChangeLocation}
+            >
+              <MenuItem value="">ทั้งหมด</MenuItem>
+              <MenuItem value="กรุงเทพมหานคร">กรุงเทพมหานคร</MenuItem>
+              <MenuItem value="เชียงใหม่">เชียงใหม่</MenuItem>
+              <MenuItem value="ภูเก็ต">ภูเก็ต</MenuItem>
+              <MenuItem value="โคราช">โคราช</MenuItem>
+              <MenuItem value="ขอนแก่น">ขอนแก่น</MenuItem>
+
+            </Select>
+            <Button variant="contained" color="orange" onClick={handleSearch}>
+              ค้นหา
+            </Button>
+            {/* <List className={classes.list}>
+              {jobs.map((job) => (
+                <React.Fragment key={job.id}>
+                  <ListItem>
+                    <ListItemText primary={job.title} secondary={job.company} />
+                  </ListItem>
+                  <Divider />
+                </React.Fragment>
+              ))}
+            </List> */}
+          </Box>
+        </Box>
+      </Container>
     </div>
   );
-          }
+}

@@ -27,14 +27,13 @@ export default function App() {
                 slidesPerView={3}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 10000,
                     disableOnInteraction: false,
                 }}
                 
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper" // กำหนดเวลาให้เลื่อนอัตโนมัติทุก 3 วินาที
+                className="mySwiper"
             >
                 <SwiperSlide>
                     <img src="/1.png" />
