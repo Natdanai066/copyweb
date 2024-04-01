@@ -36,7 +36,9 @@ import TabPanel from '@mui/lab/TabPanel';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
+import { Check, CheckBox } from "@material-ui/icons";
 
+import Checkbox from '@mui/material/Checkbox';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -52,6 +54,11 @@ const Item = styled(Paper)(({ theme }) => ({
 const images = ["/Screenshot.png", "/home_cover.jpg", "/logo-test3.png", "logo-test4.jpg"];
 
 const newPage = () => {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
 
@@ -80,9 +87,7 @@ const newPage = () => {
 
   const [value, setValue] = React.useState('1');
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+
 
   const handleClick = () => {
     window.location.href = 'https://maps.app.goo.gl/kT9ngsHAFx8jcYkk9';
@@ -193,9 +198,45 @@ const newPage = () => {
               <Grid item xs={4}>
                 <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
                 <Typography align="left">
-                      
-                    </Typography>
+                  <div>
+                    <Checkbox
+                      checked={checked}
+                      onChange={handleChange}
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+
+                  </div>
+                  
+                </Typography>
+
+                <Grid item xs={4}>
+                  <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
+                  <Typography align="left">
+                    <div>
+                      <Checkbox
+                        checked={checked}
+                        onChange={handleChange}
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                      />
+
+                    </div>
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
+                  <Typography align="left">
+                    <div>
+                      <Checkbox
+                        checked={checked}
+                        onChange={handleChange}
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                      />
+
+                    </div>
+                  </Typography>
+                </Grid>
               </Grid>
+
 
 
 
@@ -229,20 +270,63 @@ const newPage = () => {
                     </Modal>
                   </div>
                 </Item>
-                <br/>
+                <br />
                 <Grid item xs={12}>
-                <Item>
-                <Typography variant="h9" align="left">ผลการค้นหาตำแหน่งงาน dentsu International (Thailand) มี 1 ตำแหน่ง
-</Typography>
-                </Item>
-                
-              </Grid>
+                  <Item>
+                    <Typography variant="h9" align="left">ผลการค้นหาตำแหน่งงาน dentsu International (Thailand) มี 1 ตำแหน่ง
+                    </Typography>
+
+                  </Item>
+                  <br />
+                  <Grid item xs={12}>
+                    <Item>
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src="/lol1.png" alt="Your Image" style={{ marginRight: '20px' }} />
+
+                        <Typography variant="h9" align="center" style={{ flexGrow: 1 }}>
+                          <div>รับนักศึกษาฝึกงานหลายตำแหน่ง</div>
+                          <div>dentsu International (Thailand)</div>
+                          <div>ฝึกงาน สีลม, บางรัก, กรุงเทพมหานคร, 10500</div>
+                          <div> ฝึกงาน</div>
+                        </Typography>
+
+                        <button
+                          onClick={handleClick}
+                          style={{
+                            backgroundColor: 'orange',   // สีขอบสีส้ม
+                            color: 'white',              // สีข้อความภายในปุ่มสีขาว
+                            border: 'none',              // ไม่มีเส้นขอบ
+                            padding: '10px 20px',        // ขนาด padding
+                            borderRadius: '5px',         // มุมขอบโค้ง
+                            cursor: 'pointer',           // เปลี่ยนรูปลูกศรเป็น pointer เมื่อชี้
+                          }}
+                        >
+                          สมัครงานนี้
+                        </button>
+                      </div>
+
+
+                    </Item>
+
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
-            
+
           </Box>
         </Container>
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
       </main>
     </div>
 

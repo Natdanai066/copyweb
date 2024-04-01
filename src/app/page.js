@@ -324,7 +324,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>
@@ -347,7 +347,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>
@@ -379,7 +379,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>
@@ -402,7 +402,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>
@@ -435,7 +435,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>
@@ -458,7 +458,7 @@ const BlankPage = () => {
                             </Grid>
                             <Grid item xs={2}>
                               <div style={{ textAlign: 'end' }}>
-                                <Button variant="outlined">สมัครงานนี้</Button>
+                              <Button href={'/newPage/'} style={{ margin: '0 auto' }}variant="outlined">สมัครงานนี้</Button>
                                 <div>2 อัตรา</div>
                                 <div>30 มี.ค. 2024</div>
                               </div>

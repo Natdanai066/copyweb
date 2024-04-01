@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import './button1.css';
 import './grid.css';
+import './custom.css';
+import Link from 'next/link';
 
 
 const Table = () => {
@@ -32,7 +34,9 @@ const Table = () => {
               padding: '10px 20px',
               cursor: 'pointer'
             }}>
-              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+              <Link href="/newPage">
+      <span style={{ transition: 'color 0.3s', cursor: 'pointer' }}>สมัครงานนี้</span>
+    </Link>
               
             </button></div>
             
@@ -61,7 +65,9 @@ const Table = () => {
               padding: '10px 20px',
               cursor: 'pointer'
             }}>
-              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+              <Link href="/newPage">
+      <span style={{ transition: 'color 0.3s', cursor: 'pointer' }}>สมัครงานนี้</span>
+    </Link>
             </button></div>
       </div>
 
@@ -88,10 +94,23 @@ const Table = () => {
               padding: '10px 20px',
               cursor: 'pointer'
             }}>
-              <span style={{ transition: 'color 0.3s' }}>สมัครงานนี้</span>
+              <Link href="/newPage">
+      <span style={{ transition: 'color 0.3s', cursor: 'pointer' }}>สมัครงานนี้</span>
+    </Link>
+              
             </button></div>
+            
       </div>
-      
+      <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#"class="active">1</a>
+  <a href="#" >2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
     </div>
   );
 };

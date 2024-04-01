@@ -112,6 +112,7 @@ export default function BasicGrid() {
           <Box sx={{ textAlign: 'center', p: 2 }}>
             <p style={{ color: "#9C9C9C" }}>บริษัท จัดหางาน อินเทิร์นชิพส์ (ไทยแลนด์) จำกัด อาคารนันทาเพลส ห้อง 104 ชั้น 1 เลขที่ 191 ซ.รามอินทรา 39 ถนนรามอินทรา แขวงอนุสาวรีย์ เขตบางเขน กรุงเทพ 10220 Call : 02-0002984 Fax : 02-0002984 info@thaiinternships.com</p>
           </Box>
+          
         </Container>
       </Box>
     </footer>
