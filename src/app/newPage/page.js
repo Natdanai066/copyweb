@@ -20,7 +20,7 @@ import '../button.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
+import Checkbox from '@mui/material/Checkbox';
 import '../slide.css';
 import Table from '../Table';
 import Bottom from '../bottom';
@@ -38,7 +38,7 @@ import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
 import { Check, CheckBox } from "@material-ui/icons";
 
-import Checkbox from '@mui/material/Checkbox';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -48,7 +48,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const images = ["/Screenshot.png", "/home_cover.jpg", "/logo-test3.png", "logo-test4.jpg"];
@@ -196,45 +196,96 @@ const newPage = () => {
                 </Item>
               </Grid>
               <Grid item xs={4}>
-                <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
-                <Typography align="left">
-                  <div>
-                    <Checkbox
-                      checked={checked}
-                      onChange={handleChange}
-                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography>
+                  <Typography align="left">
+
+
+                    <Checkbox {...label} />ฝึกงาน
+                    <Checkbox {...label} />งานพาร์ทไทม์
+                    <Checkbox {...label} />งานประจำ
+                  </Typography>
+                  <Typography align="left">คำที่ต้องการค้นหา
+                    <input
+                      type="text"
+                      placeholder=""
+
+                      style={{
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        padding: '8px',
+                        width: '260px' // ปรับขนาดกว้างตามความเหมาะสม
+                      }}
                     />
+                  </Typography>
+                 
+                  <Typography align="left">ประเภทงาน
+                    <input
+                      type="text"
+                      placeholder=""
 
-                  </div>
+                      style={{
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        padding: '8px',
+                        width: '260px' // ปรับขนาดกว้างตามความเหมาะสม
+                      }}
+                    />
+                  </Typography>
+                 
+                  <Typography align="left">สถานที่ปฏิบัติงาน
+                    <input
+                      type="text"
+                      placeholder=""
+
+                      style={{
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        padding: '8px',
+                        width: '260px' // ปรับขนาดกว้างตามความเหมาะสม
+                      }}
+                    />
+                  </Typography>
+                  <Typography align="left">พิมพ์เพื่อค้นหา สามารถเลือกสูงสุดได้ 5 พื้นที</Typography>
+                 
+                  <Typography align="left">BTS</Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BTS สายสีเขียวอ่อน 
+                  </Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BTS สายสีเขียวเข้ม 
+                  </Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BTS สายสีแดงเข้ม 
+                  </Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BTS สายสีแดงอ่อน 
+                  </Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BTS สายสีทอง
+                  </Typography>
                   
-                </Typography>
-
-                <Grid item xs={4}>
-                  <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
+                  <Typography align="left">MRT</Typography>
                   <Typography align="left">
-                    <div>
-                      <Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'primary checkbox' }}
-                      />
-
-                    </div>
+                    <Checkbox {...label} />MRT สายสีน้ำเงิน
                   </Typography>
-                </Grid>
-                <Grid item xs={4}>
-                  <Item><Typography variant="h6" align="left">ค้นหาตำแหน่งงาน</Typography></Item>
                   <Typography align="left">
-                    <div>
-                      <Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'primary checkbox' }}
-                      />
-
-                    </div>
+                    <Checkbox {...label} />MRT สายสีม่วง
                   </Typography>
-                </Grid>
+                  <Typography align="left">
+                    <Checkbox {...label} />MRT สายสีชมพู 
+                  </Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />MRT สายสีเหลือง
+                  </Typography>
+                  <Typography align="left">ARL</Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />ARL
+                  </Typography>
+                  <Typography align="left">BRT</Typography>
+                  <Typography align="left">
+                    <Checkbox {...label} />BRT
+                  </Typography>
+                </Item>
               </Grid>
 
 
@@ -270,6 +321,7 @@ const newPage = () => {
                     </Modal>
                   </div>
                 </Item>
+                </Grid>
                 <br />
                 <Grid item xs={12}>
                   <Item>
@@ -311,7 +363,7 @@ const newPage = () => {
                   </Grid>
                 </Grid>
               </Grid>
-            </Grid>
+            
 
           </Box>
         </Container>
